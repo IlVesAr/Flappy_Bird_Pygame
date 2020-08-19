@@ -7,7 +7,7 @@ vis = 150
 speed = 3
 
 width, height = 800, 800
-
+kol = pygame.image.load('Pictures/Kolona.png')
 kol_dol = [pg_plus.Kvadrat(800, random.randrange(20 + vis, height - 20), 60, 1000, 0, speed, pg_plus.color.green),
            pg_plus.Kvadrat(800 + dis, random.randrange(20 + vis, height - 20), 60, 1000, 0, speed, pg_plus.color.green),
            pg_plus.Kvadrat(800 + dis * 2, random.randrange(20 + vis, height - 20), 60, 1000, 0, speed, pg_plus.color.green),
@@ -30,9 +30,9 @@ def Move():
 def DrAw(win):
     win.fill(pg_plus.color.cyan)
     for i in kol_dol:
-        i.draw(win)
+        win.blit(kol, (i.x, i.y))
     for i1 in kol_gor:
-        i1.draw(win)
+        win.blit(kol, (i1.x, i1.y))
     bird.draw(win)
     pygame.display.update()
 
